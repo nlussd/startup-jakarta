@@ -334,7 +334,7 @@ require([
 
     slider.noUiSlider.on('update', function () {
       yearAnimate = parseInt(slider.noUiSlider.get());
-      
+      $('#sliderValue').text(yearAnimate);
       startupX.definitionExpression = "year_only =" + yearAnimate + "";
       startupY.definitionExpression = "year_only <=" + yearAnimate + "";
     });
