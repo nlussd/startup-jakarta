@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Startup Jakarta</title>
+  <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+  <link rel="stylesheet" href="https://js.arcgis.com/4.6/esri/themes/dark-blue/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="lib/nouislider.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/apptheme.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="lib/nouislider.min.js"></script>
+  <script src="https://js.arcgis.com/4.6/"></script>
+  <script src="js/application.js"></script>
+</head>
+
+<body>
+  <script>
+    $(document).ready(function () {
+      $('#information').click(function () {
+        $('#infoPopup').show();
+      });
+      $('#closeInfo').click(function () {
+        $('#infoPopup').hide();
+      });
+      $('#fork').click(function(){
+        window.open('https://github.com/nlussd/startup-jakarta/','blank_');
+      });
+    });
+  </script>
+  <div class="container">
+    <div class="head row">
+      <div class="title col-md-11">
+        <span>
+          <b>Jakarta Start-Up Scene</b>
+        </span>
+      </div>
+      <div class="info col-md-1">
+        <div class="btn-group">
+          <button type="button" class="infoBtn btn" id="information">Info</button>
+          <button type="button" class="infoBtn btn" id="fork">Fork</button>
+        </div>
+      </div>
+    </div>
+    <div class="viewer row">
+      <div class="viewcol col-md-12" style="padding:0px;">
+        <div id="viewDiv" class="view">
+          <div class="togSwitch">
+            <label class="switch">
+              <input type="checkbox" class="location" value="yes">
+              <span class="slider round"></span>
+            </label>
+            <div class="txtSwitch">Start-Up Location</div>
+          </div>
+          <div class="timeWrapper">
+            <div id="timeSlider"></div>
+            <button id="play" class="play btn">
+              <span class="glyphicon glyphicon-play"></span> Play</button>
+            <button id="stop" class="stop btn">
+              <span class="glyphicon glyphicon-stop"></span> Stop</button>
+            <div id="sliderValue"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="infoPopup">
+    <p>
+      <b>Jakarta Start-Up Scene App</b> created by ArcGIS Javascript API 4.6.</p>
+    <p>Visualize Start-Up Jakarta locations in aggregate and time-aware animation of Start-Up by year founded.</p>
+    <p>Data source: <a href="https://www.linkedin.com/feed/update/urn:li:activity:6347733847161008128/" target="blank_">2017 Start-Up Jakarta xlxs dataset</a> compiled from Tech Crunchbase by Kiki Ahmadi. Some information might not be updated. Information in
+      this app is not intended to be formal reference.</p>
+    <br>
+    <p>
+      <button type="button" class="closeBtn btn" id="closeInfo" style="z-index:103;">Close</button>
+    </p>
+  </div>
+
+
+</body>
+
+</html>
